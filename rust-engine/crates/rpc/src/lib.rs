@@ -25,7 +25,7 @@ impl RpcWrapper {
         retry_3(|| Ok(self.client.get_latest_blockhash()?))
     }
 
-    pub fn get_signature_statuses(&self, signatures: &[Signature]) -> Result<Vec<Option<solana_client::rpc_response::RpcSignatureResult>>> {
+    pub fn get_signature_statuses(&self, signatures: &[Signature]) -> Result<Vec<Option<solana_transaction_status_client_types::TransactionStatus>>> {
         retry_3(|| Ok(self.client.get_signature_statuses(signatures)?.value))
     }
 
