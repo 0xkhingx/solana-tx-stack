@@ -1,8 +1,8 @@
 use anyhow::{Context, Result};
 use chrono::{DateTime, Utc};
-use futures::StreamExt;
+use futures::{SinkExt, StreamExt};
 use serde::{Deserialize, Serialize};
-use std::{collections::BTreeMap, env, path::PathBuf, time::Duration};
+use std::{collections::HashMap, env, path::PathBuf, time::Duration};
 use tokio::{
     fs,
     sync::{broadcast, mpsc},
@@ -11,7 +11,7 @@ use tokio::{
 use tracing::{error, info};
 use yellowstone_grpc_client::GeyserGrpcClient;
 use yellowstone_grpc_proto::geyser::{
-    CommitmentLevel, SubscribeRequest, SubscribeRequestFilterAccounts, SubscribeRequestFilterSlots,
+    SubscribeRequest, SubscribeRequestFilterAccounts, SubscribeRequestFilterSlots,
 };
 use solana_sdk::pubkey::Pubkey;
 
@@ -100,7 +100,7 @@ impl YellowstoneSubscriber {
         .await
         .context("connect Yellowstone client")?;
 
-        let mut accounts = BTreeMap::new();
+        let mut accounts = HashMap::new();
         for tip in TIP_ACCOUNTS {
             accounts.insert(
                 tip.to_string(),
@@ -112,10 +112,10 @@ impl YellowstoneSubscriber {
         }
 
         let request = SubscribeRequest {
-            slots: BTreeMap::from([(
+            slots: HashMap::from([(
                 "slot_updates".to_string(),
                 SubscribeRequestFilterSlots {
-                    filter_by_commitment: Some(CommitmentLevel::Confirmed as i32),
+                    filter_by_commitment: Some(true),
                     ..Default::default()
                 },
             )]),

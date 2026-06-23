@@ -3103,7 +3103,9 @@ dependencies = [
  "anyhow",
  "openssl",
  "solana-client",
- "solana-sdk",
+ "solana-commitment-config",
+ "solana-hash",
+ "solana-signature",
  "tokio",
 ]
 

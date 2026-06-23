@@ -6,6 +6,8 @@ edition.workspace = true
 [dependencies]
 anyhow = "1"
 openssl = { version = "0.10", features = ["vendored"] }
+solana-commitment-config = "2"
+solana-hash = "2"
+solana-signature = "2"
 solana-client = "2"
-solana-sdk = { version = "2", default-features = false }
 tokio = { version = "1", features = ["time"] }

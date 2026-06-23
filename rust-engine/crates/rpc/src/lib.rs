@@ -1,6 +1,8 @@
 use anyhow::Result;
 use solana_client::rpc_client::RpcClient;
-use solana_sdk::{commitment_config::CommitmentConfig, signature::Signature};
+use solana_commitment_config::CommitmentConfig;
+use solana_hash::Hash;
+use solana_signature::Signature;
 use std::time::Duration;
 
 /// Thin RPC wrapper with confirmed-default semantics and simple retry policy.
@@ -19,16 +21,16 @@ impl RpcWrapper {
         }
     }
 
-    pub fn get_latest_blockhash(&self) -> Result<solana_sdk::hash::Hash> {
-        retry_3(|| self.client.get_latest_blockhash())
+    pub fn get_latest_blockhash(&self) -> Result<Hash> {
+        retry_3(|| Ok(self.client.get_latest_blockhash()?))
     }
 
-    pub fn get_signature_statuses(&self, signatures: &[Signature]) -> Result<Vec<Option<solana_client::rpc_response::RpcSignatureStatus>>> {
-        retry_3(|| self.client.get_signature_statuses(signatures).map(|resp| resp.value))
+    pub fn get_signature_statuses(&self, signatures: &[Signature]) -> Result<Vec<Option<solana_client::rpc_response::RpcSignatureResult>>> {
+        retry_3(|| Ok(self.client.get_signature_statuses(signatures)?.value))
     }
 
     pub fn get_slot(&self) -> Result<u64> {
-        retry_3(|| self.client.get_slot_with_commitment(CommitmentConfig::confirmed()))
+        retry_3(|| Ok(self.client.get_slot_with_commitment(CommitmentConfig::confirmed())?))
     }
 }
 
