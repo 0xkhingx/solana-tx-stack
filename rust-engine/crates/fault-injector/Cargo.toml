@@ -1,0 +1,10 @@
+[package]
+name = "fault-injector"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow = "1"
+rpc = { path = "../rpc" }
+solana-sdk = { version = "2", default-features = false }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }

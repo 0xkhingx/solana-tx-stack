@@ -1,0 +1,17 @@
+[workspace]
+members = [
+  "crates/stream",
+  "crates/engine",
+  "crates/fault-injector",
+  "crates/logger",
+  "crates/rpc",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "MIT"
+
+[profile.dev]
+opt-level = 0

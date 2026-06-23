@@ -1,0 +1,47 @@
+name: Run Submissions
+
+on:
+  workflow_dispatch:
+    inputs:
+      network:
+        description: Network to submit against
+        required: true
+        default: devnet
+        type: string
+      submission_count:
+        description: Number of bundle submissions to run
+        required: true
+        default: "10"
+        type: string
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build engine binary
+        working-directory: rust-engine
+        run: cargo build -p engine
+
+      - name: Run bundle submissions
+        working-directory: rust-engine
+        env:
+          NETWORK: ${{ inputs.network }}
+          SUBMISSION_COUNT: ${{ inputs.submission_count }}
+        run: |
+          for i in $(seq 1 "$SUBMISSION_COUNT"); do
+            cargo run -p engine -- --network "$NETWORK" --submit-once
+          done
+
+      - name: Upload lifecycle log
+        uses: actions/upload-artifact@v4
+        with:
+          name: lifecycle-jsonl
+          path: rust-engine/logs/lifecycle.jsonl
+

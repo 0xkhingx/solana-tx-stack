@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cargo check
+        working-directory: rust-engine
+        run: cargo check -p stream -p engine -p fault-injector
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ts-agent/package-lock.json
+
+      - name: Install TS dependencies
+        working-directory: ts-agent
+        run: npm install
+
+      - name: TypeScript build check
+        working-directory: ts-agent
+        run: npm run build
+

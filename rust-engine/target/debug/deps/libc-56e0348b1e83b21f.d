@@ -1,0 +1,13 @@
+C:\Users\HP\solana-tx-stack\rust-engine\target\debug\deps\libc-56e0348b1e83b21f.d: C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\lib.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\macros.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\common\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\ucrt\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\primitives.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\windows\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\windows\msvc\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\types.rs
+
+C:\Users\HP\solana-tx-stack\rust-engine\target\debug\deps\liblibc-56e0348b1e83b21f.rmeta: C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\lib.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\macros.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\common\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\ucrt\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\primitives.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\windows\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\windows\msvc\mod.rs C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\types.rs
+
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\lib.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\macros.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\mod.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\common\mod.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\new\ucrt\mod.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\primitives.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\windows\mod.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\windows\msvc\mod.rs:
+C:\Users\HP\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.186\src\types.rs:
